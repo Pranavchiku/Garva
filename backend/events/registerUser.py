@@ -31,6 +31,7 @@ def register(request):
         poetry=False
         article=False
         quiz=False
+
         if(body_data['poetry']=="True"): poetry=True
         if(body_data['article']=="True"): article=True
         if(body_data['quiz']=="True"): quiz=True
@@ -47,6 +48,8 @@ def register(request):
             article=article,
             code=code,
         )
+
         content = {'code': str(code)}
+        
         return Response(content, status=status.HTTP_201_CREATED)
 
