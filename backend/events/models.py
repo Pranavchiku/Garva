@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import CharField
 from pytz import timezone
 
 # Create your models here.
@@ -18,5 +19,18 @@ class Event(models.Model):
 
     def __str__(self):
         return self.eventName
+
+class CustomUser(models.Model):
+    userName=models.CharField(max_length=1000)
+    userEmail=models.CharField(max_length=1000)
+    userContact=models.CharField(max_length=100)
+    userCollegeName=models.CharField(max_length=1000)
+    poetry=models.BooleanField(default=False)
+    article=models.BooleanField(default=False)
+    quiz=models.BooleanField(default=False)
+    code=models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.userName
 
 
