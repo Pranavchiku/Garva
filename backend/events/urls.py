@@ -1,7 +1,7 @@
-from django.contrib import admin
 from django.urls import path
-from events import views,getEvents,registerUser
+from .views import getEvents, register
+
 urlpatterns = [
-    path('get/', getEvents.modelAPI, name="events"),
-    path('register/',registerUser.register, name="register"),
+    path('get/', getEvents, name="events"),
+    path('register/', register, name="register"),
 ]
