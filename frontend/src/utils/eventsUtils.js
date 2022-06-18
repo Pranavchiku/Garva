@@ -1,7 +1,7 @@
 const baseURL = process.env.REACT_APP_API_URL;
 
 export async function getEvents() {
-  const url = baseURL + "get";
+  const url = baseURL + "events/get";
 
   try {
     const response = await fetch(url, {
@@ -14,7 +14,7 @@ export async function getEvents() {
 }
 
 export async function registerEvent(userDetails) {
-  const url = baseURL + "register";
+  const url = baseURL + "events/register";
 
   try {
     const response = await fetch(url, {
