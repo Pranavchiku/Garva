@@ -14,10 +14,13 @@ import json
 def getEvents(request):
     events = serializers.serialize("json", Event.objects.all())
     data = {"events": events}
-    return JsonResponse(data)
+    res = JsonResponse(data)
+    res['Access-Control-Allow-Origin'] = '*'
+
+    return res
 
 
-@api_view(('POST'))
+@api_view(['POST'])
 @csrf_exempt
 def register(request):
     if(request.method == "POST"):
@@ -50,4 +53,7 @@ def register(request):
 
         content = {'code': str(code)}
 
-        return Response(content, status=status.HTTP_201_CREATED)
+        res = Response(content, status=status.HTTP_201_CREATED)
+        res['Access-Control-Allow-Origin'] = '*'
+
+        return res
