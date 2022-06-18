@@ -10,13 +10,14 @@ import {
 } from "@chakra-ui/react";
 
 import { useCountdown } from "../hooks/useCountdown";
+import RegisterEventDrawer from "./RegisterEventDrawer";
 
 function CountdownCard({ days, hours, minutes, seconds }) {
   return (
     <Center py={6}>
       <Box
-        width={"350px"}
-        height={"200px"}
+        width={"20vw"}
+        height={"30vh"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
         rounded={"md"}
@@ -24,7 +25,7 @@ function CountdownCard({ days, hours, minutes, seconds }) {
       >
         <Box p={6}>
           <Stack>
-            <Stack spacing={0} align={"center"} mb={5} marginTop="20px">
+            <Stack spacing={0} align={"center"} mb={5} marginTop="3vh">
               <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
                 The Event starts in:
               </Heading>
@@ -47,6 +48,17 @@ function CountdownCard({ days, hours, minutes, seconds }) {
                 {seconds} {seconds <= 1 ? "Second" : "Seconds"}
               </Text>
             </Stack>
+            <br />
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                verticalAlign: "center",
+                minHeight: "10vh",
+              }}
+            >
+              <RegisterEventDrawer />
+            </div>
           </Stack>
         </Box>
       </Box>
