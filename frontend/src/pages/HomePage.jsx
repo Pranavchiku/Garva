@@ -1,6 +1,6 @@
-import NavBar from "../components/NavBar";
 import CountdownTimer from "../components/CountdownTimer";
 import { Component } from "react";
+import Carousel from "../components/Carousel";
 
 class Homepage extends Component {
   constructor(props) {
@@ -13,15 +13,17 @@ class Homepage extends Component {
 
   render() {
     return (
-      <div style={{height: "100vh"}}>
+      <div style={{ height: "100vh" }}>
         <div>
-          <NavBar />
+          <Carousel />
         </div>
-        <div style={{
-          position: "absolute",
-          left: "4vw",
-          top: "30vh"
-        }}>
+        <div
+          style={{
+            position: "absolute",
+            left: "4vw",
+            top: "30vh",
+          }}
+        >
           <CountdownTimer targetDate={this.state.targetDate} />
         </div>
       </div>
