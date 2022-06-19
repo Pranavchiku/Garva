@@ -31,11 +31,11 @@ def register(request):
         article = False
         quiz = False
 
-        if(body_data['poetry'] == "True"):
+        if(body_data['poetry'] == "true"):
             poetry = True
-        if(body_data['article'] == "True"):
+        if(body_data['article'] == "true"):
             article = True
-        if(body_data['quiz'] == "True"):
+        if(body_data['quiz'] == "true"):
             quiz = True
 
         code = random_string(3, 4)
@@ -51,9 +51,11 @@ def register(request):
             code=code,
         )
 
-        content = {'code': str(code)}
+        content = {
+            "code": code
+        }
 
-        res = Response(content, status=status.HTTP_201_CREATED)
-        res['Access-Control-Allow-Origin'] = '*'
+        res = Response(json.dumps(content), status=status.HTTP_201_CREATED, headers={
+                       'Access-Control-Allow-Origin': '*'}, content_type="application/json")
 
         return res
