@@ -13,7 +13,7 @@ import {
 
 import RegisterEventCard from "./RegisterEventCard";
 
-export default function RegisterEventDrawer({events}) {
+export default function RegisterEventDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -46,9 +46,8 @@ export default function RegisterEventDrawer({events}) {
           <DrawerHeader borderBottomWidth="1px">
             Register for Events
           </DrawerHeader>
-
           <DrawerBody>
-            <RegisterEventCard event={events} />
+            <RegisterEventCard />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
