@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.footerlinks{
+  text-decoration: none;
+  color: black;
+  height: 50px;
+  width: 50px;
+  background-color: #f5f6f7;
+  border: none;
+}
+.footerlinks:hover{
+  background-color: #e5e6e7;
+}
