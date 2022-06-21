@@ -2,7 +2,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import EventsPage from "./pages/EventsPage";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div>
@@ -14,5 +14,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
