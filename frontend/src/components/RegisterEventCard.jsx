@@ -1,3 +1,5 @@
+import { Component } from "react";
+
 import {
   Flex,
   Box,
@@ -19,8 +21,6 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-
-import { Component } from "react";
 
 import { registerEvent } from "../utils/eventsUtils";
 

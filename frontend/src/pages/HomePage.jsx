@@ -1,5 +1,6 @@
-import CountdownTimer from "../components/CountdownTimer";
 import { Component } from "react";
+
+import CountdownTimer from "../components/CountdownTimer";
 import Carousel from "../components/Carousel";
 
 class Homepage extends Component {
@@ -18,8 +19,7 @@ class Homepage extends Component {
           <Carousel />
         </div>
         <div className="counter">
-          <CountdownTimer       
-          targetDate={this.state.targetDate}  />
+          <CountdownTimer targetDate={this.state.targetDate} />
         </div>
       </div>
     );

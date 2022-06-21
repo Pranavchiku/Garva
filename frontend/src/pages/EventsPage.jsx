@@ -1,10 +1,11 @@
 import { Component } from "react";
+
+import { Center, Heading, HStack } from "@chakra-ui/react";
+
 import EventCard from "../components/EventCard";
-import { HStack } from "@chakra-ui/react";
-import { getEvents } from "../utils/eventsUtils";
-import { Heading } from "@chakra-ui/react";
 import Footer from "../components/Footer";
-import { Center } from "@chakra-ui/react";
+
+import { getEvents } from "../utils/eventsUtils";
 
 class EventsPage extends Component {
   constructor(props) {
