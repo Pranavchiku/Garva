@@ -57,26 +57,26 @@ export default function Carousel() {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       <IconButton
+        className="carouselButton"
+        position="absolute"
         aria-label="left-arrow"
         variant="ghost"
-        position="absolute"
         left={side}
         top={top}
-        transform={"translate(0%, -50%)"}
-        zIndex={2}
         onClick={() => slider?.slickPrev()}
+        _hover={{ opacity: 1 }}
       >
-        <BiLeftArrowAlt size="40px" />
+      <BiLeftArrowAlt size="40px" />
       </IconButton>
       <IconButton
+        className="carouselButton"
         aria-label="right-arrow"
         variant="ghost"
         position="absolute"
         right={side}
         top={top}
-        transform={"translate(0%, -50%)"}
-        zIndex={2}
         onClick={() => slider?.slickNext()}
+        _hover={{ opacity: 1 }}
       >
         <BiRightArrowAlt size="40px" />
       </IconButton>
@@ -92,12 +92,12 @@ export default function Carousel() {
             backgroundImage={`url(${image})`}
           >
             <NavBar />
-            <Container size="container.lg" height="600px" position="relative">
+            {/* <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
                 w={"full"}
                 maxW={"lg"}
-                position="absolute"
+                position="relative"
                 top="50%"
                 transform="translate(0, -50%)"
               >
@@ -108,7 +108,7 @@ export default function Carousel() {
                   Meow
                 </Text>
               </Stack>
-            </Container>
+            </Container> */}
           </Box>
         ))}
       </Slider>
