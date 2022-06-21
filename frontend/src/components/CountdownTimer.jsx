@@ -16,14 +16,12 @@ function CountdownCard({ days, hours, minutes, seconds }) {
   return (
     <Center py={6}>
       <Box
-        width={"20vw"}
-        height={"30vh"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
         rounded={"md"}
         overflow={"hidden"}
       >
-        <Box p={6}>
+        <Box p={8}>
           <Stack>
             <Stack spacing={0} align={"center"} mb={5} marginTop="3vh">
               <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
@@ -45,7 +43,7 @@ function CountdownCard({ days, hours, minutes, seconds }) {
               </Text>
               <Text fontWeight={600}>:</Text>
               <Text fontWeight={600}>
-                {seconds} {seconds <= 1 ? "Second" : "Seconds"}
+                {seconds==1 || seconds==0 ? "0": ""}{seconds} {seconds <= 1 ? "Second" : "Seconds"}
               </Text>
             </Stack>
             <br />
