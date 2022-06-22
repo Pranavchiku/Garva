@@ -3,7 +3,6 @@ import {
   chakra,
   Flex,
   Stack,
-  Text,
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
@@ -42,7 +41,6 @@ export default function Footer() {
         // spacing={25}
         justifyContent={"space-between"}
       >
-        <Text> © 2022 Chakra Templates. All rights reserved</Text>
         <Stack direction={"row"} spacing={8}>
           <SocialButton label={"Twitter"} href={"#"}>
             <FaTwitter />

@@ -9,8 +9,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { useCountdown } from "../hooks/useCountdown";
 import RegisterEventDrawer from "./RegisterEventDrawer";
+
+import { useCountdown } from "../hooks/useCountdown";
 
 function CountdownCard({ days, hours, minutes, seconds }) {
   return (
@@ -35,15 +36,19 @@ function CountdownCard({ days, hours, minutes, seconds }) {
               </Text>
               <Text fontWeight={600}>:</Text>
               <Text fontWeight={600}>
+                {hours < 10 ? "0" : ""}
                 {hours} {hours <= 1 ? "Hour" : "Hours"}
               </Text>
               <Text fontWeight={600}>:</Text>
               <Text fontWeight={600}>
+                {minutes < 10 ? "0" : ""}
                 {minutes} {minutes <= 1 ? "Minute" : "Minutes"}
               </Text>
               <Text fontWeight={600}>:</Text>
               <Text fontWeight={600}>
-                {seconds===1 || seconds===0 ? "0": ""}{seconds} {seconds <= 1 ? "Second" : "Seconds"}
+
+                {seconds < 10 ? "0" : ""}
+                {seconds} {seconds <= 1 ? "Second" : "Seconds"}
               </Text>
             </Stack>
             <br />

@@ -1,5 +1,6 @@
-import CountdownTimer from "../components/CountdownTimer";
 import { Component } from "react";
+
+import CountdownTimer from "../components/CountdownTimer";
 import Carousel from "../components/Carousel";
 
 class Homepage extends Component {

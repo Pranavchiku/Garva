@@ -37,21 +37,24 @@
   }
 }
 
-.carouselButton{
+.carouselButton {
   opacity: 0.5;
   z-index: 2;
   transform: translate(0%, -50%);
 }
-.counter{
+
+.counter {
   position: absolute;
   top: 12.5%;
   left: 15%;
 }
-.footer{
+
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
+
 .footerlinks {
   text-decoration: none;
   color: black;
