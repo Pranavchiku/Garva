@@ -20,9 +20,9 @@ export default function RegisterEventDrawer() {
     <>
       <Button
         flex={1}
-        maxW="10vw"
-        minH="5vh"
-        fontSize={"2xl"}
+        maxW="250px"
+        // minH="5vh"
+        // fontSize={"2xl"}
         rounded={"full"}
         bg={"blue.400"}
         color={"white"}
