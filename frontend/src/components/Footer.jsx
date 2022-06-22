@@ -38,7 +38,6 @@ export default function Footer() {
         maxW={"6xl"}
         p={5}
         direction={"row"}
-        // spacing={25}
         justifyContent={"space-between"}
       >
         <Stack direction={"row"} spacing={8}>
