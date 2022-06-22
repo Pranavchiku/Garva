@@ -1,13 +1,16 @@
 import {
+  Button,
   Flex,
   Image,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   Spacer,
 } from "@chakra-ui/react";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
+
+import RegisterEventDrawer from "./RegisterEventDrawer";
+import SubmissionDrawer from "./SubmissionDrawer";
 
 import azadiKaAmritMahotsavLogo from "../assets/logos/akam.png";
 
@@ -23,19 +26,17 @@ export default function NavBar() {
           style={{
             marginTop: "2vh",
             marginLeft: "4vw",
-            color: "white",
+            color: "black",
           }}
         >
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <RegisterEventDrawer nav />
           </BreadcrumbItem>
-
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">About</BreadcrumbLink>
+            <SubmissionDrawer nav />
           </BreadcrumbItem>
-
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+          <BreadcrumbItem>
+            <Button variant="ghost">Contact</Button>
           </BreadcrumbItem>
         </Breadcrumb>
         <Spacer />
