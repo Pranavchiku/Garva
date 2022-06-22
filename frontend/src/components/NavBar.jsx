@@ -16,10 +16,10 @@ export default function NavBar() {
     <>
       <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
         <Breadcrumb
+          className="headerText"
           spacing="10px"
           separator={<ChevronRightIcon color="gray.500" />}
           fontWeight="bold"
-          fontSize="3xl"
           style={{
             marginTop: "2vh",
             marginLeft: "4vw",
@@ -41,8 +41,7 @@ export default function NavBar() {
         <Spacer />
         <Image
           src={azadiKaAmritMahotsavLogo}
-          height="15vh"
-          width="10vw"
+          className="headerImage"
           style={{ marginTop: "2vh", marginRight: "1vw" }}
         />
       </Flex>

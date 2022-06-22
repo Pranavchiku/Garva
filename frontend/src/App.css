@@ -45,7 +45,7 @@
 
 .counter {
   position: absolute;
-  top: 15%;
+  top: 12.5%;
   left: 15%;
 }
 
@@ -66,4 +66,77 @@
 
 .footerlinks:hover {
   background-color: #e5e6e7;
+}
+
+.registerButton{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.cardHeading{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.headerText{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.headerImage{
+  height:15vh;
+  width:10vw;
+}
+
+@media only screen and (max-width: 965px) {
+  .registerButton {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .headerImage{
+    height:15vh;
+    width:15vw;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .counter{
+    height: 25%;
+    width: 75%;
+    left:15vw;
+  }
+  .headerText{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .cardText{
+    font-size: 0.75rem; /* 18px */
+    line-height: 0.75rem; /* 28px */
+  }
+}
+
+@media only screen and (max-width: 650px){
+  .cardHeading{
+    font-size: 0.5rem; 
+    line-height: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .cardText{
+    font-size: 0.6rem; /* 18px */
+    line-height: 0.6rem; /* 28px */
+  }
+  .headerText{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  .headerImage{
+    height:10vh;
+    width:20vw;
+  }
 }

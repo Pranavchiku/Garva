@@ -19,7 +19,9 @@ class Homepage extends Component {
           <Carousel />
         </div>
         <div className="counter">
-          <CountdownTimer targetDate={this.state.targetDate} />
+          <CountdownTimer       
+          targetDate={this.state.targetDate}
+          />
         </div>
       </div>
     );

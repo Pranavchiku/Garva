@@ -24,13 +24,13 @@ function CountdownCard({ days, hours, minutes, seconds }) {
       >
         <Box p={8}>
           <Stack>
-            <Stack spacing={0} align={"center"} mb={5} marginTop="3vh">
-              <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
+            <Stack spacing={0} align={"center"} mb={5} marginTop="3vh" className="cardHeading">
+              <Heading fontWeight={500} fontFamily={"body"}>
                 The Event starts in:
               </Heading>
             </Stack>
 
-            <Stack direction={"row"} justify={"center"} spacing={4}>
+            <Stack direction={"row"} justify={"center"} spacing={4} className="cardText">
               <Text fontWeight={600}>
                 {days} {days <= 1 ? "Day" : "Days"}
               </Text>
@@ -46,6 +46,7 @@ function CountdownCard({ days, hours, minutes, seconds }) {
               </Text>
               <Text fontWeight={600}>:</Text>
               <Text fontWeight={600}>
+
                 {seconds < 10 ? "0" : ""}
                 {seconds} {seconds <= 1 ? "Second" : "Seconds"}
               </Text>
@@ -59,7 +60,7 @@ function CountdownCard({ days, hours, minutes, seconds }) {
                 minHeight: "10vh",
               }}
             >
-              <RegisterEventDrawer />
+              <RegisterEventDrawer className="registerButton"/>
             </div>
           </Stack>
         </Box>
