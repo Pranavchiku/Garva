@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-import { Center, Heading, HStack } from "@chakra-ui/react";
+import { Center, Heading, Stack } from "@chakra-ui/react";
 
 import EventCard from "../components/EventCard";
 import Footer from "../components/Footer";
@@ -24,7 +24,11 @@ class EventsPage extends Component {
 
   renderEventCards() {
     return this.state.events.map((event) => {
-      return <EventCard event={event} />;
+      return (
+        <div style={{ margin: "10px" }}>
+          <EventCard event={event} />
+        </div>
+      );
     });
   }
 
@@ -38,7 +42,7 @@ class EventsPage extends Component {
             Events
           </Heading>
         </Center>
-        <HStack
+        <Stack
           style={{
             position: "relative",
             justifyContent: "center",
@@ -46,9 +50,10 @@ class EventsPage extends Component {
           spacing="10"
           alignItems="center"
           marginTop="15vh"
+          direction={["column", "row"]}
         >
           {this.renderEventCards()}
-        </HStack>
+        </Stack>
         <div
           style={{
             position: "absolute",
