@@ -27,3 +27,18 @@ export async function registerEvent(userDetails) {
     console.log(err);
   }
 }
+
+export async function submit(formData) {
+  const url = baseURL + "events/submit/";
+
+  try {
+    const response = await fetch(url, {
+      mode: "cors",
+      method: "POST",
+      body: formData,
+    });
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}

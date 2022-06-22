@@ -11,26 +11,26 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import RegisterEventCard from "./RegisterEventCard";
+import SubmissionCard from "./SubmissionCard";
 
-export default function RegisterEventDrawer({ nav }) {
+export default function SubmissionDrawer({ nav }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   if (nav) {
     return (
       <>
         <Button variant="ghost" onClick={onOpen}>
-          Register
+          Submission
         </Button>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">
-              Register for Events
+              Make Submissions
             </DrawerHeader>
             <DrawerBody>
-              <RegisterEventCard />
+              <SubmissionCard />
             </DrawerBody>
           </DrawerContent>
         </Drawer>
@@ -56,17 +56,17 @@ export default function RegisterEventDrawer({ nav }) {
           }}
           onClick={onOpen}
         >
-          Register
+          Submit
         </Button>
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">
-              Register for Events
+              Make Submissions
             </DrawerHeader>
             <DrawerBody>
-              <RegisterEventCard />
+              <SubmissionCard />
             </DrawerBody>
           </DrawerContent>
         </Drawer>

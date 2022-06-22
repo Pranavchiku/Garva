@@ -20,13 +20,19 @@ class Event(models.Model):
 
 class CustomUser(models.Model):
     userName = models.CharField(max_length=1000)
-    userEmail = models.CharField(max_length=1000)
+    userEmail = models.CharField(max_length=1000, unique=True)
     userContact = models.CharField(max_length=100)
     userCollegeName = models.CharField(max_length=1000)
     poetry = models.BooleanField(default=False)
     article = models.BooleanField(default=False)
     quiz = models.BooleanField(default=False)
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=10, unique=True)
+    poetrySubmission = models.FileField(
+        upload_to='submissions/poetry', null=True, blank=True)
+    articleSubmission = models.FileField(
+        upload_to='submissions/article', null=True, blank=True)
+    poetrySubmitted = models.BooleanField(default=False)
+    articleSubmitted = models.BooleanField(default=False)
 
     def __str__(self):
         return self.userName
