@@ -105,12 +105,56 @@ class RegisterEventCard extends Component {
     };
 
     registerEvent(userDetails).then((res) => {
-      res = JSON.parse(res);
-      this.setState({
-        error: null,
-        submissionCode: res.code,
-      });
+      if (JSON.parse(res).code) {
+        this.setState({
+          error: null,
+          submissionCode: JSON.parse(res).code,
+        });
+      } else {
+        this.setState({
+          error: JSON.parse(res).message,
+          submissionCode: "",
+        });
+      }
     });
+  };
+
+  renderModalHeader = () => {
+    if (this.state.error) {
+      return (
+        <ModalHeader>
+          <Text>Email already registered</Text>
+        </ModalHeader>
+      );
+    } else {
+      return (
+        <ModalHeader>
+          <Text>Registration Successful</Text>
+        </ModalHeader>
+      );
+    }
+  };
+
+  renderModalBody = () => {
+    if (this.state.error) {
+      return (
+        <ModalBody>
+          <Text>{this.state.error}</Text>
+        </ModalBody>
+      );
+    } else {
+      return (
+        <ModalBody>
+          <Text>You have been successfully registered!</Text>
+          <br />
+          <Text>
+            Your submission code is: {this.state.submissionCode}. Please save
+            this code as it is required while making submissions (except quiz).
+            It has also been emailed to your email address.
+          </Text>
+        </ModalBody>
+      );
+    }
   };
 
   render() {
@@ -214,17 +258,9 @@ class RegisterEventCard extends Component {
                 >
                   <ModalOverlay />
                   <ModalContent>
-                    <ModalHeader>Registration Successful!</ModalHeader>
+                    {this.renderModalHeader()}
                     <ModalCloseButton />
-                    <ModalBody>
-                      <Text>You have been successfully registered!</Text>
-                      <br />
-                      <Text>
-                        Your submission code is: {this.state.submissionCode}.
-                        Use this code while making submissions for the events
-                        (except quiz).
-                      </Text>
-                    </ModalBody>
+                    {this.renderModalBody()}
                     <ModalFooter>
                       <Button onClick={this.onModalClose}>Close</Button>
                     </ModalFooter>

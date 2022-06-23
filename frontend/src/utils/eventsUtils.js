@@ -37,7 +37,9 @@ export async function submit(formData) {
       method: "POST",
       body: formData,
     });
-    return response;
+
+    if (response.status === 200) return {};
+    return response.json();
   } catch (err) {
     console.log(err);
   }

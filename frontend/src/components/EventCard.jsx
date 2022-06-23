@@ -6,9 +6,14 @@ import {
   Image,
   Link,
   Stack,
+  Tag,
+  TagLabel,
+  TagLeftIcon,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+import { CalendarIcon } from "@chakra-ui/icons";
 
 import EventModal from "./EventModal";
 
@@ -56,19 +61,24 @@ export default function EventCard({ event }) {
             color={useColorModeValue("gray.700", "gray.400")}
             px={3}
           >
-            {event.fields.eventDescription}
-          </Text>
-          <Text
-            textAlign={"center"}
-            color={useColorModeValue("gray.700", "gray.400")}
-            px={3}
-          >
-            Start: {startDate.getHours()}:{startDate.getMinutes()}{" "}
-            {startDate.getDate()}/{startDate.getMonth()}/
-            {startDate.getFullYear()}
+            <Tag>
+              <TagLeftIcon as={CalendarIcon} />
+              <TagLabel>
+                {startDate.toLocaleDateString("en-IN")} {startDate.getHours()}:
+                {startDate.getMinutes()}{" "}
+                {startDate.getHours() >= 12 ? "PM" : "AM"}
+              </TagLabel>
+            </Tag>
             <br />
-            End: {endDate.getHours()}:{endDate.getMinutes()} {endDate.getDate()}
-            /{endDate.getMonth()}/{endDate.getFullYear()}
+            To
+            <br />
+            <Tag>
+              <TagLeftIcon as={CalendarIcon} />
+              <TagLabel>
+                {endDate.toLocaleDateString("en-IN")} {endDate.getHours()}:
+                {endDate.getMinutes()} {endDate.getHours() >= 12 ? "PM" : "AM"}
+              </TagLabel>
+            </Tag>
           </Text>
           <Stack
             width={"100%"}

@@ -26,6 +26,7 @@ class SubmissionCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      errorCode: "",
       error: null,
       submissionCode: "",
       event: "",
@@ -64,10 +65,14 @@ class SubmissionCard extends Component {
     formData.append("submissionFile", this.state.submissionFile);
 
     submit(formData).then((res) => {
-      if (res.status === 200) {
+      if (Object.keys(res).length === 0) {
         this.setState({ error: null, success: true });
       } else {
-        this.setState({ error: "Error: Duplicate Submission", success: false });
+        this.setState({
+          errorCode: JSON.parse(res).code,
+          error: JSON.parse(res).message,
+          success: false,
+        });
       }
     });
   };
@@ -80,11 +85,19 @@ class SubmissionCard extends Component {
         </ModalHeader>
       );
     } else {
-      return (
-        <ModalHeader>
-          <Text>{this.state.error}</Text>
-        </ModalHeader>
-      );
+      if (this.state.errorCode === "DUP") {
+        return (
+          <ModalHeader>
+            <Text>Error: Already Submitted</Text>
+          </ModalHeader>
+        );
+      } else if (this.state.errorCode === "NR") {
+        return (
+          <ModalHeader>
+            <Text>Error: Not Registered</Text>
+          </ModalHeader>
+        );
+      }
     }
   };
 
@@ -102,7 +115,7 @@ class SubmissionCard extends Component {
     } else {
       return (
         <ModalBody>
-          <Text>You have already made a submission for this event.</Text>
+          <Text>{this.state.error}</Text>
         </ModalBody>
       );
     }

@@ -1,10 +1,13 @@
 import React from "react";
 
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Image, Spacer } from "@chakra-ui/react";
 
 import Slider from "react-slick";
 
 import NavBar from "../components/NavBar";
+import NavDrawer from "./NavDrawer";
+
+import azadiKaAmritMahotsavLogo from "../assets/logos/akam.png";
 
 const settings = {
   dots: true,
@@ -20,6 +23,7 @@ const settings = {
 };
 
 export default function Carousel() {
+  // eslint-disable-next-line no-unused-vars
   const [slider, setSlider] = React.useState();
 
   const images = [
@@ -52,7 +56,16 @@ export default function Carousel() {
             backgroundSize="cover"
             backgroundImage={`url(${image})`}
           >
-            <NavBar />
+            <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+              <NavBar />
+              <NavDrawer />
+              <Spacer />
+              <Image
+                src={azadiKaAmritMahotsavLogo}
+                className="headerImage"
+                style={{ marginTop: "2vh", marginRight: "1vw" }}
+              />
+            </Flex>
           </Box>
         ))}
       </Slider>
