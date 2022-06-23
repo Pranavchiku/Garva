@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.core import serializers
 
 from .models import Event, CustomUser
-from .utils import random_string
+from .utils import random_string, sendCodeInEmail
 
 import json
 
@@ -29,6 +29,14 @@ def register(request):
     body = request.body.decode('utf-8')  # body in string format
     body = body.replace("\'", "\"")
     body_data = json.loads(body)
+
+    try:
+        if CustomUser.objects.get(userEmail=body_data['userEmail']):
+            return Response(json.dumps({"message": "This email is already registered."}), status=status.HTTP_400_BAD_REQUEST, headers={
+                'Access-Control-Allow-Origin': '*'}, content_type='application/json')
+    except CustomUser.DoesNotExist:
+        pass
+
     poetry = False
     article = False
     quiz = False
@@ -40,7 +48,16 @@ def register(request):
     if(body_data['quiz'] == "true"):
         quiz = True
 
-    code = random_string(3, 4)
+    if poetry or article:
+        code = random_string(3, 4)
+
+        try:
+            sendCodeInEmail(body_data['userEmail'], code, poetry, article)
+        except Exception:
+            pass
+
+    else:
+        code = ""
 
     newUser = CustomUser.objects.create(
         userName=body_data['userName'],
@@ -73,22 +90,30 @@ class SubmissionView(views.APIView):
         user = CustomUser.objects.get(code=code)
 
         if event == "poetry":
-            if user.poetrySubmitted:
-                return Response(status=status.HTTP_400_BAD_REQUEST, headers={
-                    'Access-Control-Allow-Origin': '*'})
+            if user.poetry:
+                if user.poetrySubmitted:
+                    return Response(json.dumps({"code": "DUP", "message": "You have already made a submission for this event."}), status=status.HTTP_400_BAD_REQUEST, headers={
+                        'Access-Control-Allow-Origin': '*'}, content_type='application/json')
+                else:
+                    user.poetrySubmitted = True
+                    user.poetrySubmission = file
+                    user.save()
+                    return Response(status=status.HTTP_200_OK, headers={
+                        'Access-Control-Allow-Origin': '*'})
             else:
-                user.poetrySubmitted = True
-                user.poetrySubmission = file
-                user.save()
-                return Response(status=status.HTTP_200_OK, headers={
-                    'Access-Control-Allow-Origin': '*'})
+                return Response(json.dumps({"code": "NR", "message": "You have not registered for this event."}), status=status.HTTP_400_BAD_REQUEST, headers={
+                    'Access-Control-Allow-Origin': '*'}, content_type='application/json')
         elif event == "article":
-            if user.articleSubmitted:
-                return Response(status=status.HTTP_400_BAD_REQUEST, headers={
-                    'Access-Control-Allow-Origin': '*'})
+            if user.article:
+                if user.articleSubmitted:
+                    return Response(json.dumps({"code": "DUP", "message": "You have already made a submission for this event."}), status=status.HTTP_400_BAD_REQUEST, headers={
+                        'Access-Control-Allow-Origin': '*'}, content_type='application/json')
+                else:
+                    user.articleSubmitted = True
+                    user.articleSubmission = file
+                    user.save()
+                    return Response(status=status.HTTP_200_OK, headers={
+                        'Access-Control-Allow-Origin': '*'})
             else:
-                user.articleSubmitted = True
-                user.articleSubmission = file
-                user.save()
-                return Response(status=status.HTTP_200_OK, headers={
-                    'Access-Control-Allow-Origin': '*'})
+                return Response(json.dumps({"code": "NR", "message": "You have not registered for this event."}), status=status.HTTP_400_BAD_REQUEST, headers={
+                    'Access-Control-Allow-Origin': '*'}, content_type='application/json')
