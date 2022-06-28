@@ -8,7 +8,7 @@ class Homepage extends Component {
     super(props);
     this.state = {
       error: null,
-      targetDate: new Date("June 23, 2022 12:00:00"),
+      targetDate: new Date("June 30, 2022 12:00:00"),
     };
   }
 
