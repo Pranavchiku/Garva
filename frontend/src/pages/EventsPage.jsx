@@ -3,8 +3,7 @@ import { Component } from "react";
 import { Box, Center, Heading, Stack } from "@chakra-ui/react";
 
 import EventCard from "../components/EventCard";
-import FooterDesktop from "../components/FooterDesktop";
-import FooterMobile from "../components/FooterMobile";
+import Footer from "../components/Footer";
 
 import { getEvents } from "../utils/eventsUtils";
 
@@ -55,7 +54,6 @@ class EventsPage extends Component {
         >
           {this.renderEventCards()}
         </Stack>
-
         <Box
           position={{ base: "relative", md: "absolute" }}
           style={{ bottom: "0", left: "0", right: "0", zIndex: "1" }}
@@ -63,8 +61,7 @@ class EventsPage extends Component {
           flexDirection="column"
           id="footer"
         >
-          <FooterDesktop />
-          <FooterMobile />
+          <Footer />
         </Box>
       </div>
     );
