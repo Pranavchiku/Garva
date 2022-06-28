@@ -19,7 +19,7 @@ def random_string(letter_count, digit_count):
 
 
 def sendCodeInEmail(email, code, poetry, article):
-    fromUser = "Board of Literary Affairs"
+    fromUser = "Board of Literary Affairs IIT Jodhpur"
     subject = "Submission Code for Garva"
 
     if poetry and not article:
