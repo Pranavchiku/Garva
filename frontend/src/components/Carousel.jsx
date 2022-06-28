@@ -8,7 +8,9 @@ import NavBar from "../components/NavBar";
 import NavDrawer from "./NavDrawer";
 
 import azadiKaAmritMahotsavLogo from "../assets/logos/akam.png";
-
+import flags from "../assets/backgrounds/flag.jpg";
+import india from "../assets/backgrounds/india.jpg";
+import color from "../assets/backgrounds/color.jpg";
 const settings = {
   dots: true,
   arrows: false,
@@ -27,9 +29,9 @@ export default function Carousel() {
   const [slider, setSlider] = React.useState();
 
   const images = [
-    "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-    "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
-    "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+    flags,
+    india,
+    color,
   ];
 
   return (
