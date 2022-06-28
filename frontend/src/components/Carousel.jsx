@@ -8,9 +8,10 @@ import NavBar from "../components/NavBar";
 import NavDrawer from "./NavDrawer";
 
 import azadiKaAmritMahotsavLogo from "../assets/logos/akam.png";
-import flags from "../assets/backgrounds/flag.jpg";
+import flag from "../assets/backgrounds/flag.jpg";
 import india from "../assets/backgrounds/india.jpg";
 import color from "../assets/backgrounds/color.jpg";
+
 const settings = {
   dots: true,
   arrows: false,
@@ -29,7 +30,7 @@ export default function Carousel() {
   const [slider, setSlider] = React.useState();
 
   const images = [
-    flags,
+    flag,
     india,
     color,
   ];

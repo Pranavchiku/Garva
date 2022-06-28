@@ -64,9 +64,7 @@ export default function EventCard({ event }) {
             <Tag>
               <TagLeftIcon as={CalendarIcon} />
               <TagLabel>
-                {startDate.toLocaleDateString("en-IN")} {startDate.getHours()}:
-                {startDate.getMinutes()}{" "}
-                {startDate.getHours() >= 12 ? "PM" : "AM"}
+                {startDate.toLocaleDateString("en-IN")} {startDate.toLocaleTimeString("en-IN")}
               </TagLabel>
             </Tag>
             <br />
@@ -75,8 +73,7 @@ export default function EventCard({ event }) {
             <Tag>
               <TagLeftIcon as={CalendarIcon} />
               <TagLabel>
-                {endDate.toLocaleDateString("en-IN")} {endDate.getHours()}:
-                {endDate.getMinutes()} {endDate.getHours() >= 12 ? "PM" : "AM"}
+                {endDate.toLocaleDateString("en-IN")} {endDate.toLocaleTimeString("en-IN")}
               </TagLabel>
             </Tag>
           </Text>

@@ -44,9 +44,12 @@
 }
 
 .counter {
-  position: absolute;
-  top: 12.5%;
-  left: 15%;
+  display: block;
+  position: relative;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  top: 30%;
 }
 
 .footer {
@@ -104,10 +107,9 @@
 
 @media only screen and (max-width: 765px) {
   .counter {
-    height: 25%;
-    width: 75%;
-    left: 15vw;
+    top: 25%;
   }
+
   .headerText {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -133,10 +135,12 @@
     font-size: 0.6rem;
     line-height: 0.6rem;
   }
+
   .headerText {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
+
   .headerImage {
     height: 10vh;
     width: 20vw;

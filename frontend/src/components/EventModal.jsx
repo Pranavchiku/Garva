@@ -37,7 +37,7 @@ export default function EventModal({ event }) {
             <Text>Prize: Rs. {event.fields.eventPrize}</Text>
             <Text>Point of Contact (POC): {event.fields.eventPocName}</Text>
             <Text>
-              POC Contact No.: +91-{event.fields.eventPocContactNumber}
+              POC Contact No.: +91 {event.fields.eventPocContactNumber}
             </Text>
           </ModalBody>
           <ModalFooter>

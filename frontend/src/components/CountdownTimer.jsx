@@ -15,7 +15,7 @@ import { useCountdown } from "../hooks/useCountdown";
 
 function CountdownCard({ heading, days, hours, minutes, seconds, over }) {
   return (
-    <Center py={3}>
+    <Center py={8}>
       <Box
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
@@ -35,7 +35,6 @@ function CountdownCard({ heading, days, hours, minutes, seconds, over }) {
                 {heading}
               </Heading>
             </Stack>
-
             {!over && (
               <Stack
                 direction={"row"}
