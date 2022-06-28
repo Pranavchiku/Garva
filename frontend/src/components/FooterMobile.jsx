@@ -10,7 +10,7 @@ import {
 // import literatureSocietyLogo from "../assets/logos/litsoc.jpg";
 import phemeLogo from "../assets/logos/pheme.jpg";
 import quizSocietyLogo from "../assets/logos/quizsoc.jpg";
-
+import litSocietyLogo from "../assets/logos/litsoc.jpg";
 export default function FooterMobile() {
   return (
     <Box
@@ -38,6 +38,12 @@ export default function FooterMobile() {
               h="6vh"
               w="12vw"
               alt="Quiz Society Logo"
+            />
+            <Image
+              src={litSocietyLogo}
+              h="6vh"
+              w="12vw"
+              alt="Literature Society Logo"
             />
           </Stack>
         </Center>

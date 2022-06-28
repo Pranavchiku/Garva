@@ -3,7 +3,7 @@ import { Box, Flex, Stack, useColorModeValue, Image } from "@chakra-ui/react";
 // import literatureSocietyLogo from "../assets/logos/litsoc.jpg";
 import phemeLogo from "../assets/logos/pheme.jpg";
 import quizSocietyLogo from "../assets/logos/quizsoc.jpg";
-
+import litSocietyLogo from "../assets/logos/litsoc.jpg";
 export default function FooterDesktop() {
   return (
     <Box
@@ -27,6 +27,12 @@ export default function FooterDesktop() {
           <Image src={phemeLogo} h="5vh" w="3vw" alt="PHEME Logo" />
           <Image
             src={quizSocietyLogo}
+            h="5vh"
+            w="3vw"
+            alt="Quiz Society Logo"
+          />
+          <Image
+            src={litSocietyLogo}
             h="5vh"
             w="3vw"
             alt="Quiz Society Logo"
