@@ -35,26 +35,24 @@ export default function Footer() {
                         </Text>
                     </Stack>
                     <Stack spacing={8} align="center" justifyContent="center">
-                        <Stack
-                            direction="row"
-                            spacing={10}
-                        >
+                    
+                        <Stack direction={"row"} spacing={10}>
                             <Image
                                 src={phemeLogo}
-                                h={{ base: "10vh", md: "5vh" }}
-                                w={{ base: "20vw", md: "3vw" }}
+                                h={{ base: "10vh", md: "10vh" }}
+                                w={{ base: "20vw", md: "5vw" }}
                                 alt="PHEME Logo"
                             />
                             <Image
                                 src={quizSocietyLogo}
-                                h={{ base: "10vh", md: "5vh" }}
-                                w={{ base: "20vw", md: "3vw" }}
+                                h={{ base: "10vh", md: "10vh" }}
+                                w={{ base: "20vw", md: "5vw" }}
                                 alt="Quiz Society Logo"
                             />
                             <Image
                                 src={litSocietyLogo}
-                                h={{ base: "10vh", md: "5vh" }}
-                                w={{ base: "20vw", md: "3vw" }}
+                                h={{ base: "10vh", md: "10vh" }}
+                                w={{ base: "20vw", md: "5vw" }}
                                 alt="Quiz Society Logo"
                             />
                         </Stack>
