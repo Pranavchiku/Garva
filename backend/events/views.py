@@ -7,10 +7,18 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.core import serializers
 
-from .models import Event, CustomUser
+from .models import MainEvent, Event, CustomUser
 from .utils import random_string, sendCodeInEmail
 
 import json
+
+
+@api_view(['GET'])
+def getCountdownTimerTargetDate(request):
+    targetDate = MainEvent.objects.get().countdownTimerTargetDate
+
+    return Response({"targetDate": targetDate}, status=status.HTTP_200_OK,
+                    content_type='application/json', headers={'Access-Control-Allow-Origin': '*'})
 
 
 @api_view(['GET'])
