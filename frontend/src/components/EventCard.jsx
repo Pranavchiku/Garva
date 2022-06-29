@@ -27,7 +27,7 @@ export default function EventCard({ event }) {
         borderWidth="1px"
         borderRadius="lg"
         w={{ sm: "100%", md: "30vw" }}
-        height={{ sm: "476px", md: "80vh" }}
+        height={{ sm: "476px", md: "30rem" }}
         direction={{ base: "column", md: "column" }}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"2xl"}
@@ -48,7 +48,7 @@ export default function EventCard({ event }) {
           p={1}
           pt={2}
         >
-          <Heading fontSize={window.innerWidth>1250 ? "2xl":"xl"} fontFamily={"body"}>
+          <Heading fontSize={window.innerWidth > 1250 ? "2xl" : "xl"} fontFamily={"body"}>
             {event.fields.eventName}
           </Heading>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>

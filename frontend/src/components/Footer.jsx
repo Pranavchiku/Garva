@@ -35,7 +35,10 @@ export default function Footer() {
                         </Text>
                     </Stack>
                     <Stack spacing={8} align="center" justifyContent="center">
-                        <Stack direction={["column", "row"]}>
+                        <Stack
+                            direction="row"
+                            spacing={10}
+                        >
                             <Image
                                 src={phemeLogo}
                                 h={{ base: "10vh", md: "5vh" }}
