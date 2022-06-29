@@ -1,7 +1,6 @@
 import {
   Button,
   Center,
-  Flex,
   Heading,
   Image,
   Link,
@@ -27,21 +26,20 @@ export default function EventCard({ event }) {
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm: "100%", md: "540px" }}
-        height={{ sm: "476px", md: "20rem" }}
-        direction={{ base: "column", md: "row" }}
+        w={{ sm: "100%", md: "30vw" }}
+        height={{ sm: "476px", md: "80vh" }}
+        direction={{ base: "column", md: "column" }}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"2xl"}
         padding={4}
       >
-        <Flex flex={1} bg="blue.200">
+        <Center bg="white">
           <Image
-            objectFit="cover"
-            boxSize="100%"
+            boxSize="15rem"
             src={baseURL + "media/" + event.fields.eventCoverImg}
             alt="event poster"
           />
-        </Flex>
+        </Center>
         <Stack
           flex={1}
           flexDirection="column"
@@ -50,7 +48,7 @@ export default function EventCard({ event }) {
           p={1}
           pt={2}
         >
-          <Heading fontSize={"2xl"} fontFamily={"body"}>
+          <Heading fontSize={window.innerWidth>1250 ? "2xl":"xl"} fontFamily={"body"}>
             {event.fields.eventName}
           </Heading>
           <Text fontWeight={600} color={"gray.500"} size="sm" mb={4}>
