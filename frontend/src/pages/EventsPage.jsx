@@ -34,7 +34,7 @@ class EventsPage extends Component {
 
   render() {
     return (
-      <div style={{ height: "100vh" }}>
+      <div style={{ minHeight: "100%" }}>
         <br />
         <br />
         <Center marginTop="15vh">
@@ -51,14 +51,16 @@ class EventsPage extends Component {
           alignItems="center"
           marginTop="15vh"
           direction={["column", "row"]}
+          paddingBottom="10%"
         >
           {this.renderEventCards()}
-        </Stack>
+        </Stack><br /><br />
         <Box
-          position={{ base: "relative", md: "absolute" }}
-          style={{ bottom: "0", left: "0", right: "0", zIndex: "1" }}
+          position={{ base: "relative", sm: "absolute", md: "absolute" }}
+          style={{ bottom: "0", left: "0" }}
+          marginTop="auto"
           width="100%"
-          flexDirection="column"
+          height="10%"
           id="footer"
         >
           <Footer />
