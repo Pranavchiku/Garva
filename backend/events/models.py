@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class MainEvent(models.Model):
+    countdownTimerTargetDate = models.DateTimeField()
+
+    def __str__(self):
+        return str(self.countdownTimerTargetDate)
+
+
 class Event(models.Model):
     eventName = models.CharField(max_length=100)
     eventDescription = models.CharField(max_length=10000)

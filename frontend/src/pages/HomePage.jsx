@@ -3,13 +3,21 @@ import { Component } from "react";
 import CountdownTimer from "../components/CountdownTimer";
 import Carousel from "../components/Carousel";
 
+import { getTargetDate } from "../utils/eventsUtils";
+
 class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      targetDate: new Date("June 30, 2022 12:00:00"),
+      targetDate: null,
     };
+  }
+
+  componentDidMount() {
+    getTargetDate().then(data => {
+      this.setState({ targetDate: new Date(data.targetDate) });
+    })
   }
 
   render() {
